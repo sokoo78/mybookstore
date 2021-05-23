@@ -1,0 +1,37 @@
+<p>
+  book-create works!
+</p>
+<h3>Add new book</h3>
+<p>
+  <a routerLink="/books"><b>Back</b></a>
+</p>
+
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit(bookForm.value)">
+  <div>
+    <label>Title</label>
+    <input placeholder="Title" formControlName="title" />
+  </div>
+
+  <div>
+    <label>Author</label>
+    <input placeholder="Author" formControlName="author" />
+  </div>
+
+  <div>
+    <label>Date</label>
+    <input placeholder="Date" formControlName="date" />
+  </div>
+
+  <div>
+    <label>PageNo</label>
+    <input placeholder="PageNo" formControlName="pageno" />
+  </div>
+
+  <div>
+    <label>ISBN</label>
+    <input placeholder="ISBN" formControlName="isbn" />
+  </div>
+
+<button color="panel-primary" type>Create</button>
+
+</form>
