@@ -3,8 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-book-create',
-  templateUrl: './book-create.component.html',
-  styleUrls: ['./book-create.component.css']
+  templateUrl: './book-create.component.html'
 })
 export class BookCreateComponent implements OnInit {
   bookForm: FormGroup;

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BookService } from '../book.service';
 import { Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { Book } from './book';
 
 @Component({
   selector: 'bookstore-books',
@@ -10,7 +11,7 @@ import { switchMap } from 'rxjs/operators';
 export class BookListComponent implements OnInit, OnDestroy {
   constructor(private bookService: BookService) {}
 
-  books: any[] = [];
+  books: Book[] = [];
   booksSub: Subscription;
 
   ngOnInit() {

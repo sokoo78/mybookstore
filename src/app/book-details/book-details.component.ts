@@ -4,24 +4,22 @@ import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-book-details',
-  templateUrl: './book-details.component.html',
-  styleUrls: ['./book-details.component.css']
+  templateUrl: './book-details.component.html'
 })
-export class BookDetailsComponent implements OnInit, OnDestroy {     
-
+export class BookDetailsComponent implements OnInit, OnDestroy {
   book: any = {};
 
-  constructor(private activatedRoute: ActivatedRoute, private bookService: BookService) {}
- 
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private bookService: BookService
+  ) {}
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(params => {
       const bookId = +params.get('bookId');
       this.book = this.bookService.getBook(bookId);
-    })
+    });
   }
 
-   ngOnDestroy() {
-  }
-
+  ngOnDestroy() {}
 }
