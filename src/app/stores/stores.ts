@@ -1,7 +1,7 @@
 import { Store } from './store';
 
 export class StoreTable {
-  public static authors: Store[] = [
+  public static stores: Store[] = [
     {
       id: 1,
       name: 'MikkeMakka Books',
