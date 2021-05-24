@@ -1,0 +1,39 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Store List
+  </div>
+  <a [routerLink]="['/createstore']">Add New Store</a>
+  <!-- Search books -->
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-2">Search by:</div>
+      <div class="col-md-4">
+        <input type="text" />
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table" *ngIf="stores && stores.length">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Place</th>
+            <th>ZIP</th>
+            <th>Address</th>
+            <th>Open</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let store of stores">
+            <td>{{store.name}}</td>
+            <td>{{store.place}}</td>
+            <td>{{store.zipcode}}</td>
+            <td>{{store.address}}</td>
+            <td>{{store.openinghours}}</td>
+            <td><a [routerLink]="['/stores', store.id]">Details</a></td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
