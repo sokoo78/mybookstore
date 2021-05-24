@@ -20,6 +20,7 @@ import { AuthorService } from './author.service';
 import { StoresComponent } from './stores/stores.component';
 import { StoreService } from './store.service';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   imports: [
@@ -28,18 +29,7 @@ import { AuthorDetailsComponent } from './author-details/author-details.componen
     ReactiveFormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
-    RouterModule.forRoot([
-      { path: '', component: BookListComponent },
-      { path: 'books', component: BookListComponent },
-      { path: 'books/:bookId', component: BookDetailsComponent },
-      { path: 'createbook', component: BookCreateComponent },
-      { path: 'authors', component: AuthorsComponent },
-      { path: 'authors/:authorId', component: AuthorDetailsComponent },
-      //{ path: 'createauthor', component: AuthorCreateComponent }
-      { path: 'stores', component: StoresComponent }
-      //{ path: 'stores/:storeId', component: StoreDetailsComponent },
-      //{ path: 'createstore', component: StoreCreateComponent },
-    ])
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
