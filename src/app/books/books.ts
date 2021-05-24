@@ -1,5 +1,7 @@
+import { Book } from './book';
+
 export class BookTable {
-  public static books = [
+  public static books: Book[] = [
     {
       id: 1,
       title: 'The Foundation',
