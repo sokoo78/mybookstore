@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    Author List
+  </div>
+  <a [routerLink]="['/books']">Back</a>
+  <!-- Search authors -->
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-2">Search by:</div>
+      <div class="col-md-4">
+        <input type="text" />
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table" *ngIf="authors && authors.length">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Place Of Birth</th>
+            <th>Nationality</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let author of authors">
+            <td>{{author.name}}</td>
+            <td>{{author.placeofbirth}}</td>
+            <td>{{author.nationality}}</td>
+            <td><a [routerLink]="['/authors', author.id]">Details</a></td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
