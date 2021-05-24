@@ -6,7 +6,7 @@ import { Book } from './books/book';
 
 const BOOK_URL = 'api/books';
 
-@Injectable()
+@Injectable({ providedIn: 'any'})
 export class BookService {
   constructor(private requestService: RequestService) {}
 

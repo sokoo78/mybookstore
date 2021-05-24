@@ -11,7 +11,7 @@ import { RequestService } from './request.service';
 import { BookListComponent } from './books/book-list.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookCreateComponent } from './book-create/book-create.component';
-import { InMemoryBookService } from './in-memory-book.service';
+import { InMemoryDataService } from './in-memory-data.service';
 import { BookService } from './book.service';
 
 import { AuthorsComponent } from './authors/authors.component';
@@ -27,14 +27,14 @@ import { AuthorDetailsComponent } from './author-details/author-details.componen
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryBookService),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
     RouterModule.forRoot([
       { path: '', component: BookListComponent },
       { path: 'books', component: BookListComponent },
       { path: 'books/:bookId', component: BookDetailsComponent },
       { path: 'createbook', component: BookCreateComponent },
       { path: 'authors', component: AuthorsComponent },
-      //{ path: 'authors/:authorId', component: AuthorDetailsComponent },
+      { path: 'authors/:authorId', component: AuthorDetailsComponent },
       //{ path: 'createauthor', component: AuthorCreateComponent }
       { path: 'stores', component: StoresComponent }
       //{ path: 'stores/:storeId', component: StoreDetailsComponent },
@@ -52,7 +52,7 @@ import { AuthorDetailsComponent } from './author-details/author-details.componen
   ],
   bootstrap: [AppComponent],
   providers: [
-    InMemoryBookService,
+    InMemoryDataService,
     RequestService,
     BookService,
     AuthorService,

@@ -6,7 +6,7 @@ import { Store } from './stores/store';
 
 const STORE_URL = 'api/stores';
 
-@Injectable()
+@Injectable({ providedIn: 'any'})
 export class StoreService {
   constructor(private requestService: RequestService) {}
 

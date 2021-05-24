@@ -20,7 +20,7 @@ export class BookCreateComponent implements OnInit {
     });
   }
 
-  onSubmit(bookData) {
+  onSubmit(bookData: any) {
     alert('form:\n' + JSON.stringify(bookData));
     this.bookForm.reset();
   }

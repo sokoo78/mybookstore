@@ -6,7 +6,7 @@ import { Author } from './authors/author';
 
 const AUTHOR_URL = 'api/authors';
 
-@Injectable()
+@Injectable({ providedIn: 'any'})
 export class AuthorService {
   constructor(private requestService: RequestService) {}
 
