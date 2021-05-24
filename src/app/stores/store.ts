@@ -1,4 +1,5 @@
 export class Store {
+  id: number;
   name: string;
   place: string;
   zipcode: string;

@@ -16,6 +16,7 @@ import { BookService } from './book.service';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorService } from './author.service';
 import { StoresComponent } from './stores/stores.component';
+import { StoreService } from './store.service';
 
 @NgModule({
   imports: [
@@ -40,6 +41,6 @@ import { StoresComponent } from './stores/stores.component';
     StoresComponent
   ],
   bootstrap: [AppComponent],
-  providers: [InMemoryBookService, RequestService, BookService, AuthorService]
+  providers: [InMemoryBookService, RequestService, BookService, AuthorService, StoreService]
 })
 export class AppModule {}
