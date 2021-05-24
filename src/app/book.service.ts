@@ -1,19 +1,42 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { RequestService } from './request.service';
+import { HttpHeaders } from '@angular/common/http';
+
+const BOOK_URL = 'api/books';
 
 @Injectable()
-export class BookService {  
+export class BookService {
+  constructor(private requestService: RequestService) {}
 
-  books : any;
-
-  constructor(private http: HttpClient) {}
-
-  getBooks() {
-    return this.http.get('/assets/books.json');
+  getBooks(): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.requestService.get<any>(BOOK_URL, httpOptions);
   }
 
-  getBook(bookId: number) {
-    this.getBooks().subscribe(result => this.books = result);
-    return this.books.find((b: { id: number; }) => b.id === bookId);
+  getBook(bookId): Observable<any> {
+    return this.requestService.get(`${BOOK_URL}/${bookId}`);
+  }
+
+  createBook(book: any): Observable<any> {
+    return this.requestService.post(`${BOOK_URL}/`, book);
+  }
+
+  updateBook(book: any): Observable<any> {
+    return this.requestService.put(`${BOOK_URL}/`, book);
+  }
+
+  deleteBook(bookId: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    const url = `${BOOK_URL}/${bookId}`;
+    return this.requestService.delete(url, httpOptions);
   }
 }

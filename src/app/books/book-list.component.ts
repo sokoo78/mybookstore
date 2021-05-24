@@ -6,13 +6,11 @@ import { BookService } from '../book.service';
   templateUrl: './book-list.component.html'
 })
 export class BookListComponent implements OnInit {
-  pageTitle: string = 'Book List';
-  books : any;
+  books: any;
 
   constructor(private bookService: BookService) {}
 
   ngOnInit() {
-    this.bookService.getBooks().subscribe(result => this.books = result);
-    //this.books = this.bookService.getBooks();
+    this.bookService.getBooks().subscribe(result => (this.books = result));
   }
 }
