@@ -13,6 +13,7 @@ import { BookCreateComponent } from './book-create/book-create.component';
 import { InMemoryBookService } from './in-memory-book.service';
 import { RequestService } from './request.service';
 import { BookService } from './book.service';
+import { AuthorsComponent } from './authors/authors.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { BookService } from './book.service';
     AppComponent,
     BookListComponent,
     BookDetailsComponent,
-    BookCreateComponent
+    BookCreateComponent,
+    AuthorsComponent
   ],
   bootstrap: [AppComponent],
   providers: [InMemoryBookService, RequestService, BookService]
