@@ -6,7 +6,7 @@ import { AuthorService } from '../author.service';
   selector: 'app-author-details',
   templateUrl: './author-details.component.html'
 })
-export class AuthorDetailsComponent implements OnInit, OnDestroy {
+export class AuthorDetailsComponent implements OnInit {
   author: any = {};
 
   constructor(
@@ -20,6 +20,4 @@ export class AuthorDetailsComponent implements OnInit, OnDestroy {
       this.author = this.authorService.getAuthor(authorId);
     });
   }
-
-  ngOnDestroy() {}
 }
