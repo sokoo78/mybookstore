@@ -21,6 +21,7 @@ import { StoreService } from './store.service';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { environment } from '../environments/environment';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({ 
   imports: [
@@ -40,7 +41,8 @@ import { environment } from '../environments/environment';
     BookCreateComponent,
     AuthorsComponent,
     StoresComponent,
-    AuthorDetailsComponent
+    AuthorDetailsComponent,
+    MenuComponent
   ],
   bootstrap: [AppComponent],
   providers: [
