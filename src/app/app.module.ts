@@ -20,6 +20,7 @@ import { StoresComponent } from './stores/stores.component';
 import { StoreService } from './store.service';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [
@@ -27,7 +28,9 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    environment.isMockEnabled
+      ? HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+      : [],
     AppRoutingModule
   ],
   declarations: [
