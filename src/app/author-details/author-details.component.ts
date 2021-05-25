@@ -10,14 +10,17 @@ export class AuthorDetailsComponent implements OnInit {
   author: any = {};
 
   constructor(
-    private activatedRoute: ActivatedRoute,
+    private route: ActivatedRoute,
     private authorService: AuthorService
   ) {}
 
   ngOnInit() {
-    this.activatedRoute.paramMap.subscribe(params => {
-      const authorId = +params.get('authorId');
-      this.author = this.authorService.getAuthor(authorId);
+    this.route.paramMap.subscribe(params => {
+      this.authorService
+        .getAuthor(+params.get('authorId'))
+        .subscribe(author => {
+          this.author = author;
+        });
     });
   }
 }
