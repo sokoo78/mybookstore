@@ -21,7 +21,7 @@ export class BookService {
 
   getBook(bookId: number): Observable<Book> {
     return this.requestService.get(`${BOOK_URL}/${bookId}`);
-  }
+  }  
 
   createBook(book: Book): Observable<any> {
     return this.requestService.post(`${BOOK_URL}/`, book);
