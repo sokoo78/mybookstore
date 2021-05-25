@@ -22,7 +22,7 @@ import { AuthorDetailsComponent } from './author-details/author-details.componen
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { environment } from '../environments/environment';
 
-@NgModule({
+@NgModule({ 
   imports: [
     BrowserModule,
     FormsModule,
