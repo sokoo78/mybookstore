@@ -27,7 +27,7 @@ export class AuthorDetailsComponent implements OnInit {
         });
     });
 
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe(() => {
       this.bookService.getBooks().subscribe(books => {
         this.books = books.filter(book => book.author === this.author.name);
       });

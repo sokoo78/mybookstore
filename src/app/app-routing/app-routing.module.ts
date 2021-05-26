@@ -6,6 +6,7 @@ import { AuthorsComponent } from '../authors/authors.component';
 import { BookCreateComponent } from '../book-create/book-create.component';
 import { BookDetailsComponent } from '../book-details/book-details.component';
 import { BookListComponent } from '../books/book-list.component';
+import { StoreDetailsComponent } from '../store-details/store-details.component';
 import { StoresComponent } from '../stores/stores.component';
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'authors/:authorId', component: AuthorDetailsComponent },
   { path: 'createauthor', component: AuthorCreateComponent },
   { path: 'stores', component: StoresComponent },
-  //{ path: 'stores/:storeId', component: StoreDetailsComponent },
+  { path: 'stores/:storeId', component: StoreDetailsComponent },
   //{ path: 'createstore', component: StoreCreateComponent },
   { path: '**', component: BookListComponent }
 ];

@@ -24,7 +24,7 @@ export class StoreDetailsComponent implements OnInit {
       this.store = this.storeService.getStore(storeId);
     });
 
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe(() => {
       this.bookService.getBooks().subscribe(books => {
         this.books = books.filter(book => this.store.books.includes(book.id));
       });
