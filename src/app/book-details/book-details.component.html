@@ -1,4 +1,11 @@
-<h2>{{book.title}}</h2>
 <p>
-<a [routerLink] = "['/books']">Back</a>
+  <a [routerLink]="['/books']">Back</a>
 </p>
+
+<br /><br />
+<h3>Book details</h3>
+<b>Title:</b> {{book.title}}<br />
+<b>Author:</b> {{book.author}}<br />
+<b>Page number:</b> {{book.pageno}}<br />
+<b>ISBN:</b> {{book.isbn}}<br />
+<br />
