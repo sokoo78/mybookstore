@@ -22,6 +22,7 @@ import { AuthorDetailsComponent } from './author-details/author-details.componen
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { environment } from '../environments/environment';
 import { MenuComponent } from './menu/menu.component';
+import { AuthorCreateComponent } from './author-create/author-create.component';
 
 @NgModule({ 
   imports: [
@@ -42,7 +43,8 @@ import { MenuComponent } from './menu/menu.component';
     AuthorsComponent,
     StoresComponent,
     AuthorDetailsComponent,
-    MenuComponent
+    MenuComponent,
+    AuthorCreateComponent
   ],
   bootstrap: [AppComponent],
   providers: [

@@ -1,0 +1,24 @@
+<h3>Add new Author</h3>
+<p>
+  <a routerLink="/authors"><b>Back</b></a>
+</p>
+
+<form [formGroup]="authorForm" (ngSubmit)="onSubmit(authorForm.value)">
+  <div>
+    <label>Name:&nbsp;</label>
+    <input placeholder="Name" formControlName="name" />
+  </div>
+
+
+  <div>
+    <label>Place of birth:&nbsp;</label>
+    <input placeholder="Date" formControlName="placeofbirth" />
+  </div>
+
+  <div>
+    <label>Nationality:&nbsp;</label>
+    <input placeholder="Nationality" formControlName="nationality" />
+  </div>
+
+  <button color="panel-primary" type>Create</button>
+</form>

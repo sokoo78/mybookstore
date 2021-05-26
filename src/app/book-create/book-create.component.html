@@ -5,27 +5,31 @@
 
 <form [formGroup]="bookForm" (ngSubmit)="onSubmit(bookForm.value)">
   <div>
-    <label>Title</label>
+    <label>Title:&nbsp;</label>
     <input placeholder="Title" formControlName="title" />
   </div>
 
   <div>
-    <label>Author</label>
-    <input placeholder="Author" formControlName="author" />
+    <label>Author:&nbsp;</label>
+    <select [(ngModel)]="author" name="authors" [ngModelOptions]="{standalone: true}">
+      <option *ngFor="let author of authors$ | async" [value]="author.name">
+        {{author.name}}
+      </option>
+    </select>
   </div>
 
   <div>
-    <label>Date</label>
+    <label>Date:&nbsp;</label>
     <input placeholder="Date" formControlName="date" />
   </div>
 
   <div>
-    <label>PageNo</label>
+    <label>PageNo:&nbsp;</label>
     <input placeholder="PageNo" formControlName="pageno" />
   </div>
 
   <div>
-    <label>ISBN</label>
+    <label>ISBN:&nbsp;</label>
     <input placeholder="ISBN" formControlName="isbn" />
   </div>
 

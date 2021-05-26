@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthorService } from '../author.service';
+import { Author } from '../authors/author';
 import { BookService } from '../book.service';
 
 @Component({
@@ -19,12 +20,11 @@ export class BookCreateComponent implements OnInit {
     private router: Router
   ) {}
 
-  authors$: Observable<any>;
+  authors$: Observable<Author[]>;
   author: string;
 
   ngOnInit() {
     this.authors$ = this.authorService.getAuthors();
-
     this.bookForm = this.formBuilder.group({
       title: '',
       author: '',
@@ -35,7 +35,8 @@ export class BookCreateComponent implements OnInit {
   }
 
   onSubmit(bookData) {
-    this.bookService.createBook(bookData).subscribe(res => {
+    bookData.author = this.author;
+    this.bookService.createBook(bookData).subscribe(() => {
       this.bookForm.reset();
       this.router.navigate(['/books']);
     });

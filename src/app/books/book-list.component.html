@@ -1,6 +1,6 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    Book List
+    <h3>Book List</h3>
   </div>
   <a [routerLink]="['/createbook']">Add New Book</a>
   <!-- Search books -->
@@ -19,16 +19,12 @@
             <th>Title</th>
             <th>Author</th>
             <th>Date</th>
-            <th>PageNo</th>
-            <th>ISBN</th>
             <th></th>
           </tr>
           <tr *ngFor="let book of books">
             <td><a [routerLink]="['/books', book.id]">{{book.title}}</a></td>
             <td>{{book.author}}</td>
             <td>{{book.date | date : 'yyyy-MM-dd'}}</td>
-            <td>{{book.pageno}}</td>
-            <td>{{book.isbn}}</td>
             <td></td>
           </tr>
         </thead>
