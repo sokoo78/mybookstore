@@ -6,4 +6,5 @@ export class Store {
   address: string;
   openinghours: string;
   books: number[];
+  amounts: number[];
 }

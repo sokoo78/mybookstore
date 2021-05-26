@@ -17,6 +17,14 @@ export class BookTable {
       date: '1954.07.29',
       pageno: 1216,
       isbn: '9780544003415'
+    },
+    {
+      id: 3,
+      title: 'The Fountainhead',
+      author: 'Ayn Rand',
+      date: '1943',
+      pageno: 753,
+      isbn: '9780452273337'
     }
   ];
 }

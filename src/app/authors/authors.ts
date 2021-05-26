@@ -13,6 +13,12 @@ export class AuthorTable {
       name: 'J. R. R. Tolkien',
       placeofbirth: 'Bloemfontein',
       nationality: 'English'
+    },
+    {
+      id: 3,
+      name: 'Ayn Rand',
+      placeofbirth: 'Szentpétervár',
+      nationality: 'American'
     }
   ];
 }

@@ -18,17 +18,13 @@
           <tr>
             <th>Name</th>
             <th>Place</th>
-            <th>ZIP</th>
             <th>Address</th>
-            <th>Open</th>
             <th></th>
           </tr>
           <tr *ngFor="let store of stores">
             <td><a [routerLink]="['/stores', store.id]">{{store.name}}</a></td>
-            <td>{{store.place}}</td>
-            <td>{{store.zipcode}}</td>
+            <td>{{store.zipcode}}&nbsp;{{store.place}}</td>
             <td>{{store.address}}</td>
-            <td>{{store.openinghours}}</td>
             <td></td>
           </tr>
         </thead>
