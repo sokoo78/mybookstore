@@ -23,11 +23,11 @@ export class BookService {
     return this.requestService.get(`${BOOK_URL}/${bookId}`);
   }  
 
-  createBook(book: Book): Observable<any> {
+  createBook(book: any): Observable<any> {
     return this.requestService.post(`${BOOK_URL}/`, book);
   }
 
-  updateBook(book: Book): Observable<any> {
+  updateBook(book: any): Observable<any> {
     return this.requestService.put(`${BOOK_URL}/`, book);
   }
 
