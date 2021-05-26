@@ -6,7 +6,7 @@ import { Author } from './authors/author';
 
 const AUTHOR_URL = 'api/authors';
 
-@Injectable({ providedIn: 'any'})
+@Injectable({ providedIn: 'any' })
 export class AuthorService {
   constructor(private requestService: RequestService) {}
 
@@ -23,7 +23,10 @@ export class AuthorService {
     return this.requestService.get(`${AUTHOR_URL}/${authorId}`);
   }
 
-  createAuthor(author: Author): Observable<any> {
+  createAuthor(author: any): Observable<any> {
+    this.getAuthors().subscribe(authors => {
+      author.id = authors.length + 1;
+    });
     return this.requestService.post(`${AUTHOR_URL}/`, author);
   }
 
