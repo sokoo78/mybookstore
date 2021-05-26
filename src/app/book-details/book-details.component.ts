@@ -6,7 +6,7 @@ import { BookService } from '../book.service';
   selector: 'app-book-details',
   templateUrl: './book-details.component.html'
 })
-export class BookDetailsComponent implements OnInit, OnDestroy {
+export class BookDetailsComponent implements OnInit {
   book: any = {};
 
   constructor(
@@ -20,6 +20,4 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
       this.book = this.bookService.getBook(bookId);
     });
   }
-
-  ngOnDestroy() {}
 }
