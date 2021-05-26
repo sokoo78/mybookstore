@@ -19,17 +19,11 @@ export class BookCreateComponent implements OnInit {
     private router: Router
   ) {}
 
-  //books$: Observable<any>;
   authors$: Observable<any>;
-  //id: any;
   author: string;
 
   ngOnInit() {
     this.authors$ = this.authorService.getAuthors();
-    //this.books$ = this.bookService.getBooks();
-    //this.books$.subscribe(books => {
-    //  this.id = books.length + 1;
-    //});
 
     this.bookForm = this.formBuilder.group({
       title: '',
@@ -41,8 +35,6 @@ export class BookCreateComponent implements OnInit {
   }
 
   onSubmit(bookData) {
-    //bookData.id = this.id;
-    //bookData.author = this.author;
     this.bookService.createBook(bookData).subscribe(res => {
       this.bookForm.reset();
       this.router.navigate(['/books']);

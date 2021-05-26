@@ -18,8 +18,8 @@ export class BookService {
   }
 
   createBook(book: any): Observable<any> {
-    book.id = this.getBooks().subscribe(books => {
-      books.length + 1;
+    this.getBooks().subscribe(books => {
+      book.id = books.length + 1;
     });
     return this.requestService.post(`${BOOK_URL}/`, book);
   }
