@@ -1,29 +1,26 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RequestService } from './request.service';
-import { HttpHeaders } from '@angular/common/http';
-import { Book } from './books/book';
 
 const BOOK_URL = 'api/books';
 
-@Injectable({ providedIn: 'any' })
+@Injectable()
 export class BookService {
   constructor(private requestService: RequestService) {}
 
-  getBooks(): Observable<Book[]> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    };
-    return this.requestService.get<Book[]>(BOOK_URL, httpOptions);
+  getBooks(): Observable<any> {
+    return this.requestService.get(BOOK_URL);
   }
 
-  getBook(bookId: number): Observable<Book> {
+  getBook(bookId): Observable<any> {
     return this.requestService.get(`${BOOK_URL}/${bookId}`);
-  }  
+  }
 
   createBook(book: any): Observable<any> {
+    book.id = this.getBooks().subscribe(books => {
+      books.length + 1;
+    });
     return this.requestService.post(`${BOOK_URL}/`, book);
   }
 
