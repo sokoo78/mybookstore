@@ -1,0 +1,30 @@
+<br>
+<h3>Store details</h3>
+<b>Name:</b> {{store.name}}<br>
+<b>Place:</b> {{store.place}}<br>
+<b>ZIP:</b> {{store.zipcode}}<br>
+<b>Address:</b> {{store.address}}<br>
+<b>Open:</b> {{store.openinghours}}<br>
+
+<h3>Store Books</h3>
+<div class="table-responsive">
+  <table class="table" *ngIf="books && books.length">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>PageNo</th>
+        <th>ISBN</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let book of books">
+        <td><a [routerLink]="['/books', book.id]">{{book.title}}</a></td>
+        <td>{{book.date | date : 'yyyy-MM-dd'}}</td>
+        <td>{{book.pageno}}</td>
+        <td>{{book.isbn}}</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>

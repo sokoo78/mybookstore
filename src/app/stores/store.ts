@@ -5,4 +5,5 @@ export class Store {
   zipcode: string;
   address: string;
   openinghours: string;
+  books: number[];
 }
