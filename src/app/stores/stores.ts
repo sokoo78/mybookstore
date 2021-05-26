@@ -9,7 +9,7 @@ export class StoreTable {
       zipcode: '1122',
       address: 'Búzakalász utca 27.',
       openinghours: '8:00 - 16:00',
-      books: [1, 2, 3]
+      books: [1]
     },
     {
       id: 2,
@@ -17,7 +17,8 @@ export class StoreTable {
       place: 'Zalaegerszeg',
       zipcode: '8390',
       address: 'Zala Plaza első emelet',
-      openinghours: '9:00 - 17:00'
+      openinghours: '9:00 - 17:00',
+      books: [2]
     }
   ];
 }
