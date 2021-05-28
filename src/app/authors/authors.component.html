@@ -14,6 +14,36 @@
             <th (click)="onHeaderClick('nationality')">Nationality</th>
             <th></th>
           </tr>
+          <tr>
+            <th>
+              <input
+                type="text"
+                placeholder="name filter"
+                [(ngModel)]="filters.name"
+                name="name"
+                class="form-control"
+              />
+            </th>
+            <th>
+              <input
+                type="text"
+                placeholder="place filter"
+                [(ngModel)]="filters.placeofbirth"
+                name="placeofbirth"
+                class="form-control"
+              />
+            </th>
+            <th>
+              <input
+                type="text"
+                placeholder="nationality filter"
+                [(ngModel)]="filters.nationality"
+                name="nationality"
+                class="form-control"
+              />
+            </th>
+            <th></th>
+          </tr>
           <tr *ngFor="let author of authors">
             <td><a [routerLink]="['/authors', author.id]">{{author.name}}</a></td>
             <td>{{author.placeofbirth}}</td>

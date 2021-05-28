@@ -13,7 +13,12 @@ export class AuthorsComponent implements OnInit, OnDestroy {
 
   authors: Author[] = [];
   authorsSub: Subscription;
-  sortAscending = false;  
+  sortAscending = false;
+  filters = {
+    name: '',
+    placeofbirth: '',
+    nationality: ''
+  };
 
   ngOnInit() {
     this.authorsSub = this.authorService
