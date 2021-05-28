@@ -15,14 +15,14 @@ export class StoreEditComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {}
 
-  bookstoreForm: FormGroup;
+  storeForm: FormGroup;
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.storeService
         .getStore(+params.get('storeId'))
         .subscribe(result => {
-          this.bookstoreForm = this.formBuilder.group({
+          this.storeForm = this.formBuilder.group({
             id: result.id,
             name: result.name,
             city: result.place,
@@ -34,10 +34,10 @@ export class StoreEditComponent implements OnInit {
     });
   }
 
-  onSubmit(bookstoreData) {
-    this.bookstoreService.updateStore(bookstoreData).subscribe(() => {
-      this.bookstoreForm.reset();
-      this.router.navigate(['/bookstores']);
+  onSubmit(storeData) {
+    this.storeService.updateStore(storeData).subscribe(() => {
+      this.storeForm.reset();
+      this.router.navigate(['/stores']);
     });
   }
 }
