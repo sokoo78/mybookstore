@@ -17,8 +17,8 @@
         <thead>
           <tr>
             <th (click)="onHeaderClick('title')">Title</th>
-            <th>Author</th>
-            <th>Date</th>
+            <th (click)="onHeaderClick('author')">Author</th>
+            <th (click)="onHeaderClick('date')">Date</th>
             <th></th>
           </tr>
           <tr *ngFor="let book of books">
