@@ -5,15 +5,15 @@ import { Pipe, PipeTransform } from '@angular/core';
   pure: false
 })
 export class BookFilterPipe implements PipeTransform {
-  transform(items: any[], filter): any {
-    if (!items || !filter) {
-      return items;
+  transform(books: any[], filters): any {
+    if (!books || !filters) {
+      return books;
     }
-    return items.filter(
+    return books.filter(
       item =>        
-        item.title.indexOf(filter.title) !== -1 &&
-        item.author.indexOf(filter.author) !== -1 &&
-        item.published.toString().indexOf(filter.date) !== -1
+        item.title.indexOf(filters.title) !== -1 &&
+        item.author.indexOf(filters.author) !== -1 &&
+        item.published.toString().indexOf(filters.date) !== -1
     );
   }
 }
