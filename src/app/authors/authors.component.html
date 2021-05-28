@@ -44,7 +44,7 @@
             </th>
             <th></th>
           </tr>
-          <tr *ngFor="let author of authors">
+          <tr *ngFor="let author of authors | authorFilter:filters">
             <td><a [routerLink]="['/authors', author.id]">{{author.name}}</a></td>
             <td>{{author.placeofbirth}}</td>
             <td>{{author.nationality}}</td>
