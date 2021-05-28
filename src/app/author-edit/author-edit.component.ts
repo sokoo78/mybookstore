@@ -18,13 +18,6 @@ export class AuthorEditComponent implements OnInit {
   authorForm: FormGroup;
 
   ngOnInit() {
-    this.authorForm = this.formBuilder.group({
-      id: '',
-      name: '',
-      birth: '',
-      nationality: ''
-    });
-
     this.route.paramMap.subscribe(params => {
       this.authorService
         .getAuthor(+params.get('authorId'))
@@ -32,7 +25,7 @@ export class AuthorEditComponent implements OnInit {
           this.authorForm = this.formBuilder.group({
             id: result.id,
             name: result.name,
-            birth: result.placeofbirth,
+            placeofbirth: result.placeofbirth,
             nationality: result.nationality
           });
         });
