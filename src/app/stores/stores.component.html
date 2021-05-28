@@ -1,17 +1,11 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    Store List
+    <br>
+    <h3>Store List</h3>
   </div>
-  <a [routerLink]="['/createstore']">Add New Store</a>
-  <!-- Search books -->
-  <div class="panel-body">
-    <div class="row">
-      <div class="col-md-2">Search by:</div>
-      <div class="col-md-4">
-        <input type="text" />
-      </div>
-    </div>
+  <a [routerLink]="['/createstore']">Add New Store</a><br><br>
 
+  <div class="panel-body">
     <div class="table-responsive">
       <table class="table" *ngIf="stores && stores.length">
         <thead>
@@ -53,7 +47,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let store of stores">
+          <tr *ngFor="let store of stores | storeFilter:filters">
             <td><a [routerLink]="['/stores', store.id]">{{store.name}}</a></td>
             <td>{{store.zipcode}}&nbsp;{{store.place}}</td>
             <td>{{store.address}}</td>
