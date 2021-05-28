@@ -13,6 +13,7 @@ export class BookListComponent implements OnInit, OnDestroy {
 
   books: Book[] = [];
   booksSub: Subscription;
+  sortAscending = false;
 
   ngOnInit() {
     this.booksSub = this.bookService
@@ -20,8 +21,15 @@ export class BookListComponent implements OnInit, OnDestroy {
       .subscribe(result => (this.books = result));
   }
 
-  ngOnDestroy() {
-    if (this.booksSub) this.booksSub.unsubscribe();
+  onHeaderClick(property: any) {
+    if (this.sortAscending) {
+      this.books.sort((a, b) => (a[property] < b[property] ? -1 : 1));
+      this.sortAscending = false;
+      return;
+    }
+
+    this.books.sort((a, b) => (a[property] > b[property] ? -1 : 1));
+    this.sortAscending = true;
   }
 
   onDeleteBook(bookId: number): void {
@@ -29,5 +37,9 @@ export class BookListComponent implements OnInit, OnDestroy {
       .deleteBook(bookId)
       .pipe(switchMap(res => this.bookService.getBooks()))
       .subscribe(result => (this.books = result));
+  }
+
+  ngOnDestroy() {
+    if (this.booksSub) this.booksSub.unsubscribe();
   }
 }

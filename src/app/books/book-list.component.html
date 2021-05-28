@@ -16,7 +16,7 @@
       <table class="table" *ngIf="books && books.length">
         <thead>
           <tr>
-            <th>Title</th>
+            <th (click)="onHeaderClick('title')">Title</th>
             <th>Author</th>
             <th>Date</th>
             <th></th>
