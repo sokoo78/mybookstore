@@ -1,29 +1,33 @@
-<br /><br />
-<h3>Store details</h3>
-<b>Name:</b> {{store.name}}<br />
-<b>Place:</b> {{store.place}}<br />
-<b>ZIP:</b> {{store.zipcode}}<br />
-<b>Address:</b> {{store.address}}<br />
-<b>Open:</b> {{store.openinghours}}<br />
-<br />
+<h3>Edit Store</h3>
+<p>
+  <a routerLink="/stores"><b>Back</b></a>
+</p>
 
-<h3>Store available books</h3>
-<div class="table-responsive">
-  <table class="table" *ngIf="books && books.length">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Amount</th>
-        <th></th>
-      </tr>
-      <tr *ngFor="let book of books;let i=index;">
-        <td><a [routerLink]="['/books', book.id]">{{book.title}}</a></td>
-        <td>{{book.author}}</td>
-        <td>{{store.amounts[i]}}</td>
-        <td></td>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-</div>
+<form [formGroup]="storeForm" (ngSubmit)="onSubmit(storeForm.value)">
+  <div>
+    <label>Name:&nbsp;</label>
+    <input placeholder="Name" formControlName="name" />
+  </div>
+
+  <div>
+    <label>Place:&nbsp;</label>
+    <input placeholder="Place" formControlName="place" />
+  </div>
+
+  <div>
+    <label>ZIP:&nbsp;</label>
+    <input placeholder="ZIP code" formControlName="zipcode" />
+  </div>
+
+  <div>
+    <label>Address:&nbsp;</label>
+    <input placeholder="Address" formControlName="address" />
+  </div>
+
+  <div>
+    <label>Opening hours:&nbsp;</label>
+    <input placeholder="Open" formControlName="openinghours" />
+  </div>
+
+  <button color="panel-primary" type>Update</button>
+</form>

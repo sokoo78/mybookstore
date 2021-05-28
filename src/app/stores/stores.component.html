@@ -53,6 +53,7 @@
             <td>{{store.address}}</td>
             <td>
               <button (click)="onDelete(store.id)">X</button>
+              <a [routerLink]="['/editstore', store.id]"><button>...</button></a>
             </td>
           </tr>
         </tbody>
