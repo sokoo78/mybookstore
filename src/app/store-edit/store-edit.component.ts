@@ -19,18 +19,18 @@ export class StoreEditComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.storeService
-        .getStore(+params.get('storeId'))
-        .subscribe(result => {
-          this.storeForm = this.formBuilder.group({
-            id: result.id,
-            name: result.name,
-            city: result.place,
-            zip: result.zipcode,
-            address: result.address,
-            open: result.openinghours
-          });
+      this.storeService.getStore(+params.get('storeId')).subscribe(result => {
+        this.storeForm = this.formBuilder.group({
+          id: result.id,
+          name: result.name,
+          city: result.place,
+          zip: result.zipcode,
+          address: result.address,
+          open: result.openinghours,
+          books: result.books,
+          amounts: result.amounts
         });
+      });
     });
   }
 
