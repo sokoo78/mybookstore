@@ -16,9 +16,9 @@
       <table class="table" *ngIf="authors && authors.length">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Place Of Birth</th>
-            <th>Nationality</th>
+            <th (click)="onHeaderClick('name')">Name</th>
+            <th (click)="onHeaderClick('placeofbirth')">Place Of Birth</th>
+            <th (click)="onHeaderClick('nationality')">Nationality</th>
             <th></th>
           </tr>
           <tr *ngFor="let author of authors">

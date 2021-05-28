@@ -27,7 +27,6 @@ export class BookListComponent implements OnInit, OnDestroy {
       this.sortAscending = false;
       return;
     }
-
     this.books.sort((a, b) => (a[property] > b[property] ? -1 : 1));
     this.sortAscending = true;
   }
