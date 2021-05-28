@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'authors', component: AuthorsComponent },
   { path: 'authors/:authorId', component: AuthorDetailsComponent },
   { path: 'createauthor', component: AuthorCreateComponent },
+  { path: 'editauthor/:authorId', component: AuthorCreateComponent },
   { path: 'stores', component: StoresComponent },
   { path: 'stores/:storeId', component: StoreDetailsComponent },
   { path: 'createstore', component: StoreCreateComponent },

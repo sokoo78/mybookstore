@@ -50,6 +50,8 @@
             <td>{{author.nationality}}</td>
             <td>
               <button (click)="onDelete(author.id)">X</button>
+              <a [routerLink]="['/editauthor', author.id]"><button>...</button></a>
+
             </td>
           </tr>
         </thead>
