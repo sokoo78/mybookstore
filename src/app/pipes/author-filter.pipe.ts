@@ -20,7 +20,8 @@ export class AuthorFilterPipe implements PipeTransform {
         item.nationality
           .toLocaleLowerCase()
           .toString()
-          .indexOf(filters.nationality.toLowerCase()) !== -1
+          .indexOf(filters.nationality.toLowerCase()) !== -1 &&
+        item.isactive == true
     );
   }
 }

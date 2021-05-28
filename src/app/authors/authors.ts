@@ -6,19 +6,22 @@ export class AuthorTable {
       id: 1,
       name: 'Isaac Asimov',
       placeofbirth: 'Petrovicsi',
-      nationality: 'Russian'
+      nationality: 'Russian',
+      isactive: true
     },
     {
       id: 2,
       name: 'J. R. R. Tolkien',
       placeofbirth: 'Bloemfontein',
-      nationality: 'English'
+      nationality: 'English',
+      isactive: true
     },
     {
       id: 3,
       name: 'Ayn Rand',
       placeofbirth: 'Szentpétervár',
-      nationality: 'American'
+      nationality: 'American',
+      isactive: true
     }
   ];
 }

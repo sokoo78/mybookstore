@@ -3,4 +3,5 @@ export class Author {
   name: string;
   placeofbirth: string;
   nationality: string;
+  isactive: boolean;
 }

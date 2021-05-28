@@ -25,6 +25,7 @@ export class AuthorCreateComponent implements OnInit {
   }
   
   onSubmit(authorData) {
+    authorData.isactive = true;
     this.authorService.createAuthor(authorData).subscribe(() => {
       this.authorForm.reset();
       this.router.navigate(['/authors']);
