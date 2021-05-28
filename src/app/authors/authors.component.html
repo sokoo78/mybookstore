@@ -48,7 +48,9 @@
             <td><a [routerLink]="['/authors', author.id]">{{author.name}}</a></td>
             <td>{{author.placeofbirth}}</td>
             <td>{{author.nationality}}</td>
-            <td></td>
+            <td>
+              <button (click)="onDelete(author.id)">X</button>
+            </td>
           </tr>
         </thead>
         <tbody></tbody>

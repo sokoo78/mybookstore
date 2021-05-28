@@ -51,7 +51,9 @@
             <td><a [routerLink]="['/stores', store.id]">{{store.name}}</a></td>
             <td>{{store.zipcode}}&nbsp;{{store.place}}</td>
             <td>{{store.address}}</td>
-            <td></td>
+            <td>
+              <button (click)="onDelete(store.id)">X</button>
+            </td>
           </tr>
         </tbody>
       </table>

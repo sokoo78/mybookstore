@@ -49,7 +49,9 @@
             <td><a [routerLink]="['/books', book.id]">{{book.title}}</a></td>
             <td>{{book.author}}</td>
             <td>{{book.date | date : 'yyyy-MM-dd'}}</td>
-            <td></td>
+            <td>
+              <button (click)="onDelete(book.id)">X</button>
+            </td>
           </tr>
         </tbody>
       </table>

@@ -36,7 +36,7 @@ export class BookListComponent implements OnInit, OnDestroy {
     this.sortAscending = true;
   }
 
-  onDeleteBook(bookId: number): void {
+  onDelete(bookId: number): void {
     this.bookService
       .deleteBook(bookId)
       .pipe(switchMap(res => this.bookService.getBooks()))

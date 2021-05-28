@@ -36,7 +36,7 @@ export class AuthorsComponent implements OnInit, OnDestroy {
     this.sortAscending = true;
   }
 
-  onDeleteAuthor(authorId: number): void {
+  onDelete(authorId: number): void {
     this.authorService
       .deleteAuthor(authorId)
       .pipe(switchMap(res => this.authorService.getAuthors()))

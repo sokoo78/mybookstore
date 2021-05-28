@@ -29,7 +29,7 @@ export class StoresComponent implements OnInit, OnDestroy {
     if (this.storesSub) this.storesSub.unsubscribe();
   }
 
-  onDeleteStore(storeId: number): void {
+  onDelete(storeId: number): void {
     this.storeService
       .deleteStore(storeId)
       .pipe(switchMap(res => this.storeService.getStores()))
