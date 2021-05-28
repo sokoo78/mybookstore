@@ -23,10 +23,10 @@ export class StoreEditComponent implements OnInit {
         this.storeForm = this.formBuilder.group({
           id: result.id,
           name: result.name,
-          city: result.place,
-          zip: result.zipcode,
+          place: result.place,
+          zipcode: result.zipcode,
           address: result.address,
-          open: result.openinghours,
+          openinghours: result.openinghours,
           books: result.books,
           amounts: result.amounts
         });
