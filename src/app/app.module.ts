@@ -28,6 +28,7 @@ import { BookFilterPipe } from './pipes/book-filter.pipe';
 import { AuthorFilterPipe } from './pipes/author-filter.pipe';
 import { StoreFilterPipe } from './pipes/store-filter.pipe';
 import { StoreCreateComponent } from './store-create/store-create.component';
+import { AuthorEditComponent } from './author-edit/author-edit.component';
 
 @NgModule({ 
   imports: [
@@ -54,7 +55,8 @@ import { StoreCreateComponent } from './store-create/store-create.component';
     BookFilterPipe,
     AuthorFilterPipe,
     StoreFilterPipe,
-    StoreCreateComponent
+    StoreCreateComponent,
+    AuthorEditComponent
   ],
   bootstrap: [AppComponent],
   providers: [
