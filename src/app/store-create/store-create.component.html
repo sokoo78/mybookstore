@@ -1,0 +1,33 @@
+<h3>Add new Store</h3>
+<p>
+  <a routerLink="/stores"><b>Back</b></a>
+</p>
+
+<form [formGroup]="storeForm" (ngSubmit)="onSubmit(storeForm.value)">
+  <div>
+    <label>Name:&nbsp;</label>
+    <input placeholder="Name" formControlName="name" />
+  </div>
+
+  <div>
+    <label>Place:&nbsp;</label>
+    <input placeholder="Place" formControlName="place" />
+  </div>
+
+  <div>
+    <label>ZIP:&nbsp;</label>
+    <input placeholder="ZIP code" formControlName="zipcode" />
+  </div>
+
+  <div>
+    <label>Address:&nbsp;</label>
+    <input placeholder="Address" formControlName="address" />
+  </div>
+
+  <div>
+    <label>Opening hours:&nbsp;</label>
+    <input placeholder="Open" formControlName="openinghours" />
+  </div>
+
+  <button color="panel-primary" type>Create</button>
+</form>
