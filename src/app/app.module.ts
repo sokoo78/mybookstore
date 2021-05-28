@@ -24,7 +24,7 @@ import { environment } from '../environments/environment';
 import { MenuComponent } from './menu/menu.component';
 import { AuthorCreateComponent } from './author-create/author-create.component';
 import { StoreDetailsComponent } from './store-details/store-details.component';
-import { BookFilterPipe } from './book-filter.pipe';
+import { BookFilterPipe } from './pipes/book-filter.pipe';
 
 @NgModule({ 
   imports: [
