@@ -14,6 +14,11 @@ export class BookListComponent implements OnInit, OnDestroy {
   books: Book[] = [];
   booksSub: Subscription;
   sortAscending = false;
+  filters = {
+    title: '',
+    author: '',
+    date: ''
+  };
 
   ngOnInit() {
     this.booksSub = this.bookService

@@ -5,13 +5,6 @@
   <a [routerLink]="['/createauthor']">Add New Author</a>
   <!-- Search authors -->
   <div class="panel-body">
-    <div class="row">
-      <div class="col-md-2">Search by:</div>
-      <div class="col-md-4">
-        <input type="text" />
-      </div>
-    </div>
-
     <div class="table-responsive">
       <table class="table" *ngIf="authors && authors.length">
         <thead>

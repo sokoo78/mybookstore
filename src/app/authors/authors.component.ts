@@ -13,7 +13,7 @@ export class AuthorsComponent implements OnInit, OnDestroy {
 
   authors: Author[] = [];
   authorsSub: Subscription;
-  sortAscending = false;
+  sortAscending = false;  
 
   ngOnInit() {
     this.authorsSub = this.authorService
@@ -30,8 +30,6 @@ export class AuthorsComponent implements OnInit, OnDestroy {
     this.authors.sort((a, b) => (a[property] > b[property] ? -1 : 1));
     this.sortAscending = true;
   }
-
-  
 
   onDeleteAuthor(authorId: number): void {
     this.authorService
