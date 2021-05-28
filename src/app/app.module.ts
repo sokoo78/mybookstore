@@ -24,6 +24,7 @@ import { environment } from '../environments/environment';
 import { MenuComponent } from './menu/menu.component';
 import { AuthorCreateComponent } from './author-create/author-create.component';
 import { StoreDetailsComponent } from './store-details/store-details.component';
+import { BookFilterPipe } from './book-filter.pipe';
 
 @NgModule({ 
   imports: [
@@ -46,7 +47,8 @@ import { StoreDetailsComponent } from './store-details/store-details.component';
     AuthorDetailsComponent,
     MenuComponent,
     AuthorCreateComponent,
-    StoreDetailsComponent
+    StoreDetailsComponent,
+    BookFilterPipe
   ],
   bootstrap: [AppComponent],
   providers: [
