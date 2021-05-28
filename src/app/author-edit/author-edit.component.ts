@@ -26,7 +26,8 @@ export class AuthorEditComponent implements OnInit {
             id: result.id,
             name: result.name,
             placeofbirth: result.placeofbirth,
-            nationality: result.nationality
+            nationality: result.nationality,
+            isactive: true
           });
         });
     });
