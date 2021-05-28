@@ -11,10 +11,16 @@ export class BookFilterPipe implements PipeTransform {
       return books;
     }
     return books.filter(
-      item =>        
-        item.title.indexOf(filters.title) !== -1 &&
-        item.author.indexOf(filters.author) !== -1 &&
-        item.date.toString().indexOf(filters.date) !== -1
+      item =>
+        item.title.toLocaleLowerCase().indexOf(filters.title.toLowerCase()) !==
+          -1 &&
+        item.author
+          .toLocaleLowerCase()
+          .indexOf(filters.author.toLowerCase()) !== -1 &&
+        item.date
+          .toString()
+          .toLocaleLowerCase()
+          .indexOf(filters.date.toLowerCase()) !== -1
     );
   }
 }

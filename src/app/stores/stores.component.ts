@@ -13,6 +13,11 @@ export class StoresComponent implements OnInit, OnDestroy {
 
   stores: Store[] = [];
   storesSub: Subscription;
+  filters = {
+    name: '',
+    place: '',
+    address: ''
+  };
 
   ngOnInit() {
     this.storesSub = this.storeService

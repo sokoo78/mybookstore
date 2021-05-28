@@ -6,15 +6,21 @@ import { Author } from '../authors/author';
   pure: false
 })
 export class AuthorFilterPipe implements PipeTransform {
-  transform(authors: Author[], filters): any {
+  transform(authors: Author[], filters: any): any {
     if (!authors || !filters) {
       return authors;
     }
     return authors.filter(
-      item =>        
-        item.name.indexOf(filters.name) !== -1 &&
-        item.placeofbirth.indexOf(filters.placeofbirth) !== -1 &&
-        item.nationality.toString().indexOf(filters.nationality) !== -1
+      item =>
+        item.name.toLocaleLowerCase().indexOf(filters.name.toLowerCase()) !==
+          -1 &&
+        item.placeofbirth
+          .toLocaleLowerCase()
+          .indexOf(filters.placeofbirth.toLowerCase()) !== -1 &&
+        item.nationality
+          .toLocaleLowerCase()
+          .toString()
+          .indexOf(filters.nationality.toLowerCase()) !== -1
     );
   }
 }

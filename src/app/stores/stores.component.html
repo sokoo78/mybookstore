@@ -21,14 +21,45 @@
             <th>Address</th>
             <th></th>
           </tr>
+          <tr>
+            <th>
+              <input
+                type="text"
+                placeholder="name filter"
+                [(ngModel)]="filters.name"
+                name="name"
+                class="form-control"
+              />
+            </th>
+            <th>
+              <input
+                type="text"
+                placeholder="place filter"
+                [(ngModel)]="filters.place"
+                name="place"
+                class="form-control"
+              />
+            </th>
+            <th>
+              <input
+                type="text"
+                placeholder="address filter"
+                [(ngModel)]="filters.address"
+                name="address"
+                class="form-control"
+              />
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
           <tr *ngFor="let store of stores">
             <td><a [routerLink]="['/stores', store.id]">{{store.name}}</a></td>
             <td>{{store.zipcode}}&nbsp;{{store.place}}</td>
             <td>{{store.address}}</td>
             <td></td>
           </tr>
-        </thead>
-        <tbody></tbody>
+        </tbody>
       </table>
     </div>
   </div>
