@@ -12,9 +12,9 @@ export class AuthorFilterPipe implements PipeTransform {
     }
     return authors.filter(
       item =>        
-        item.name.indexOf(filters.title) !== -1 &&
-        item.placeofbirth.indexOf(filters.author) !== -1 &&
-        item.nationality.toString().indexOf(filters.date) !== -1
+        item.name.indexOf(filters.name) !== -1 &&
+        item.placeofbirth.indexOf(filters.placeofbirth) !== -1 &&
+        item.nationality.toString().indexOf(filters.nationality) !== -1
     );
   }
 }
